@@ -1,0 +1,105 @@
+_wandb:
+    value:
+        cli_version: 0.24.0
+        e:
+            g5wsncyixgwh1b3qn5px79b9xgh5y7bi:
+                cpu_count: 4
+                cpu_count_logical: 8
+                disk:
+                    /:
+                        total: "155278327808"
+                        used: "121882157056"
+                email: m.riad@esi-sba.dz
+                executable: /home/moha/miniconda3/bin/python
+                git:
+                    commit: 144f5c0aeb42d99397221ddd3bcb6460eaad2efc
+                    remote: https://Mohariade:@github.com/Mohariade/Telco-Customer-Churn-MLOPs.git
+                host: moha-Latitude-5300
+                memory:
+                    total: "8090021888"
+                os: Linux-5.15.0-131-generic-x86_64-with-glibc2.35
+                program: -m src.train
+                python: CPython 3.13.5
+                root: /home/moha/SEDC/MLOPS_project
+                startedAt: "2026-01-30T17:31:26.850003Z"
+                writerId: g5wsncyixgwh1b3qn5px79b9xgh5y7bi
+        m: []
+        python_version: 3.13.5
+        t:
+            "1":
+                - 5
+                - 6
+                - 53
+                - 105
+            "2":
+                - 5
+                - 6
+                - 53
+                - 105
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.13.5
+            "5": 0.24.0
+            "8":
+                - 2
+            "10":
+                - 20
+            "12": 0.24.0
+            "13": linux-x86_64
+        visualize:
+            conf_mat:
+                panel_config:
+                    fieldSettings:
+                        Actual: Actual
+                        Predicted: Predicted
+                        nPredictions: nPredictions
+                    panelDefId: wandb/confusion_matrix/v1
+                    stringSettings:
+                        title: Confusion Matrix Curve
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: conf_mat_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+data_params:
+    value:
+        random_state: 42
+        raw_path: data/telco_churn_v2.csv
+        test_size: 0.2
+model_params:
+    value:
+        logistic_regression:
+            max_iter: 1000
+            solver: lbfgs
+        xgboost:
+            colsample_bytree: 0.8
+            eval_metric: logloss
+            learning_rate: 0.1
+            max_depth: 3
+            n_estimators: 100
+            random_state: 42
+            subsample: 0.8
+            use_label_encoder: false
+project_setup:
+    value:
+        experiment_name: xgboost-feature-eng-v4
+        model_type: xgboost
+        project_name: Telco-Churn-MLOps

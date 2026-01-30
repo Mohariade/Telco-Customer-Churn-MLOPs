@@ -1,0 +1,1 @@
+{"columns": ["Actual", "Predicted", "nPredictions"], "data": [["Stay", "Stay", 947.0], ["Stay", "Churn", 89.0], ["Churn", "Stay", 176.0], ["Churn", "Churn", 197.0]]}

@@ -1,0 +1,26 @@
+{
+  "os": "Linux-5.15.0-131-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.13.5",
+  "startedAt": "2026-01-30T17:26:45.390254Z",
+  "program": "-m src.train",
+  "git": {
+    "remote": "https://Mohariade:@github.com/Mohariade/Telco-Customer-Churn-MLOPs.git",
+    "commit": "144f5c0aeb42d99397221ddd3bcb6460eaad2efc"
+  },
+  "email": "m.riad@esi-sba.dz",
+  "root": "/home/moha/SEDC/MLOPS_project",
+  "host": "moha-Latitude-5300",
+  "executable": "/home/moha/miniconda3/bin/python",
+  "cpu_count": 4,
+  "cpu_count_logical": 8,
+  "disk": {
+    "/": {
+      "total": "155278327808",
+      "used": "121868464128"
+    }
+  },
+  "memory": {
+    "total": "8090021888"
+  },
+  "writerId": "s8z4wlyoeojz1kf360lib4kpegni6ybz"
+}
