@@ -1,0 +1,66 @@
+_wandb:
+    value:
+        cli_version: 0.24.0
+        e:
+            q52e33xuezfufelfmvl60eh8sw6urq41:
+                codePath: src/train.py
+                codePathLocal: src/train.py
+                cpu_count: 4
+                cpu_count_logical: 8
+                disk:
+                    /:
+                        total: "155278327808"
+                        used: "120057823232"
+                email: m.riad@esi-sba.dz
+                executable: /home/moha/miniconda3/bin/python
+                git:
+                    commit: 85bfd082616648af7000b85f6b4d4cf1c7b56fd0
+                    remote: https://Mohariade:@github.com/Mohariade/Telco-Customer-Churn-MLOPs.git
+                host: moha-Latitude-5300
+                memory:
+                    total: "8090017792"
+                os: Linux-5.15.0-131-generic-x86_64-with-glibc2.35
+                program: /home/moha/SEDC/MLOPS_project/src/train.py
+                python: CPython 3.13.5
+                root: /home/moha/SEDC/MLOPS_project
+                startedAt: "2026-01-30T13:47:11.387944Z"
+                writerId: q52e33xuezfufelfmvl60eh8sw6urq41
+        m: []
+        python_version: 3.13.5
+        t:
+            "1":
+                - 5
+                - 53
+                - 105
+            "2":
+                - 5
+                - 53
+                - 105
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.13.5
+            "5": 0.24.0
+            "8":
+                - 2
+            "12": 0.24.0
+            "13": linux-x86_64
+data_params:
+    value:
+        random_state: 42
+        raw_path: data/telco_churn_v1.csv
+        test_size: 0.2
+model_params:
+    value:
+        logistic_regression:
+            max_iter: 1000
+            solver: lbfgs
+        xgboost:
+            learning_rate: 0.05
+            max_depth: 6
+            n_estimators: 150
+project_setup:
+    value:
+        experiment_name: initial-baseline
+        project_name: Telco-Churn-MLOps

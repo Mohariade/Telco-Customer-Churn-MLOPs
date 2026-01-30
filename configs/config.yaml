@@ -1,13 +1,18 @@
 project_setup:
   project_name: "Telco-Churn-MLOps"
-  experiment_name: "initial-baseline"
+  experiment_name: "initial-baseline"# Change this to "xgboost" for Version 2
 
 data_params:
-  raw_path: "data/telco_churn.csv"
+  raw_path: "data/telco_churn_v1.csv" 
   test_size: 0.2
   random_state: 42
 
+
 model_params:
-  n_estimators: 100
-  max_depth: 5
-  learning_rate: 0.1
+  logistic_regression:
+    max_iter: 1000
+    solver: "lbfgs"
+  xgboost:
+    n_estimators: 150
+    max_depth: 6
+    learning_rate: 0.05
