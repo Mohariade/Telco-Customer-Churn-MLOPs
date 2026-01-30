@@ -1,105 +1,127 @@
-# 🚀 Telco Customer Churn - MLOps Lifecycle Project
+# 🚀 Telco Customer Churn Prediction
 
-## 📌 Project Overview
+### End-to-End MLOps Lifecycle Project
 
-This project applies end-to-end MLOps principles to predict customer
-churn for a telecommunications company. We transitioned from a
-research-based notebook approach to a production-ready pipeline
-featuring experiment tracking, model versioning, and REST API
-deployment.
+------------------------------------------------------------------------
 
-**Team Members:** \[Name 1\], \[Name 2\], \[Name 3\], \[Name 4\]\
-**Module:** SEDS - Capstone Project\
+## 📌 Overview
+
+This project demonstrates a complete **Machine Learning Operations
+(MLOps)** lifecycle applied to a Telco Customer Churn use case.
+
+We transform a traditional notebook-based ML workflow into a
+**production-grade pipeline**, integrating experiment tracking, model
+versioning, automated training, and REST API deployment.
+
+The objective is to showcase how machine learning systems are designed,
+monitored, deployed, and reproduced in real-world environments.
+
+------------------------------------------------------------------------
+
+## 👥 Team
+
+-   RIAD MOHAMED\
+-   HOUDIAFA BOUAMINE
+
+**Module:** SEDS -- Capstone Project\
 **Instructor:** Dr. Belkacem KHALDI
 
 ------------------------------------------------------------------------
 
-## 🏗️ Project Structure
-
-We follow a modular architecture to ensure reproducibility and
-scalability:
+## 🏗️ Repository Structure
 
     .
-    ├── configs/            # YAML files for model & data parameters
-    ├── data/               # Raw and versioned datasets
-    ├── deployments/        # Flask API for model serving (Production)
-    ├── models/             # Local registry for trained .pkl artifacts
-    ├── notebooks/          # Exploratory Data Analysis & Experimentation
-    ├── src/                # Modular source code (Preprocess, Train, Eval)
-    ├── requirements.txt    # Project dependencies
-    └── README.md           # Documentation
+    ├── configs/
+    ├── data/
+    ├── deployments/
+    ├── models/
+    ├── notebooks/
+    ├── src/
+    ├── requirements.txt
+    ├── Dockerfile
+    └── README.md
 
 ------------------------------------------------------------------------
 
-## 🧪 MLOps Lifecycle Implementation
+## 🔄 MLOps Pipeline
 
-### 1. Experiment Tracking & Versioning (W&B)
+### Experiment Tracking & Model Registry
 
-We used Weights & Biases as our central MLOps platform:
+-   Metrics logging (Accuracy, F1, Precision, Recall)\
+-   Logistic Regression vs XGBoost comparison\
+-   Hyperparameter configs via YAML\
+-   Model versioning using W&B Artifacts
 
--   Tracking: Logged metrics (Accuracy, F1-Score, Precision, Recall) for
-    Logistic Regression vs. XGBoost\
--   Hyperparameter Tuning: Managed via `configs/config.yaml`\
--   Model Registry: Models are versioned as Artifacts, allowing us to
-    track which model is currently Production-Ready
+### Feature Engineering
 
-### 2. Feature Engineering & Optimization
+-   36 engineered behavioral features\
+-   F1-score threshold optimization\
+-   Business-driven evaluation
 
--   Engineered 36 features to capture customer behavior\
--   Implemented Decision Threshold Optimization to maximize the
-    F1-Score, moving beyond simple accuracy to prioritize business value
+### Model Serving
 
-### 3. Model Deployment (Serving)
+-   Flask REST API\
+-   Endpoint: POST /predict\
+-   Feature alignment for robustness
 
--   Deployed the baseline model as a REST API using Flask\
--   Endpoint: `POST /predict`\
--   Robustness: Includes a feature-alignment layer to handle missing
-    data fields in production requests
+### Monitoring & Reproducibility
 
-### 4. Monitoring & Reproducibility
-
--   System Monitoring: W&B tracks CPU/GPU/RAM usage during pipeline
-    execution\
--   Reproducibility: The entire training pipeline can be triggered with
-    a single command, pulling parameters from versioned YAML configs
+-   CPU/RAM/GPU tracking\
+-   One-command reproducible pipeline
 
 ------------------------------------------------------------------------
 
-## 🚀 How to Run
+## 🐳 Docker Deployment
 
-### 1. Setup Environment
+Build image:
 
-``` bash
-pip install -r requirements.txt
-```
+    docker build -t churn-prediction-app .
 
-### 2. Run the Training Pipeline
+Run container:
 
-This script cleans data, trains the model, logs results to W&B, and
-saves the artifact.
+    docker run -p 5000:5000 churn-prediction-app
 
-``` bash
-python -m src.train
-```
+------------------------------------------------------------------------
 
-### 3. Start the Production API (Deployment)
+## 🚀 Local Execution
 
-``` bash
-python deployments/app.py
-```
+Install:
 
-### 4. Test the API (cURL)
+    pip install -r requirements.txt
 
-``` bash
-curl -X POST http://127.0.0.1:5000/predict \
-     -H "Content-Type: application/json" \
-     -d '{"tenure": 24, "MonthlyCharges": 85.0, "TotalCharges": 2040.0}'
-```
+Train:
+
+    python -m src.train
+
+Start API:
+
+    python deployments/app.py
+
+Test:
+
+    curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d '{"tenure":24,"MonthlyCharges":85.0,"TotalCharges":2040.0}'
 
 ------------------------------------------------------------------------
 
 ## 📊 Deliverables
 
--   W&B Dashboard: \[Link to your Public W&B Project\]\
--   Presentation Slides: \[Link to Google Slides/Canva\]\
--   Video Walkthrough: \[Link to your Video\]
+-   W&B Dashboard: \[Add link\]\
+-   Slides: \[Add link\]\
+-   Demo Video: \[Add link\]
+
+------------------------------------------------------------------------
+
+## ✨ Highlights
+
+-   Complete MLOps lifecycle\
+-   Experiment tracking\
+-   REST deployment\
+-   Dockerized setup\
+-   Reproducible pipeline
+
+------------------------------------------------------------------------
+
+## 📈 Conclusion
+
+This project demonstrates transitioning ML from experimentation to
+production using modern MLOps practices.
