@@ -1,13 +1,13 @@
 project_setup:
   project_name: "Telco-Churn-MLOps"
-  experiment_name: "initial-baseline"# Change this to "xgboost" for Version 2
+  experiment_name: "xgboost-challenger-v2" 
+  model_type: "xgboost"
 
 data_params:
-  raw_path: "data/telco_churn_v1.csv" 
+  raw_path: "data/telco_churn_v2.csv" # The new version of your data
   test_size: 0.2
   random_state: 42
-
-
+  
 model_params:
   logistic_regression:
     max_iter: 1000
